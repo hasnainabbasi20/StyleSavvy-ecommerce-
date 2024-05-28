@@ -95,7 +95,7 @@ const featImg = [
           
           { featImg.map((item)=>{ 
             
-            return <img src={item.src} className='md:h-72 md:w-72 w-56 h-56 my-9 mx-5 md:mx-0 shadow-lg shadow-gray-500'></img>})}
+            return <img src={item.src} className='md:h-72 md:w-72 w-64 h-64 my-9 ml-10 md:mx-0 shadow-lg shadow-gray-500'></img>})}
           </div>
 
   </div>

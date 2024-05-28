@@ -153,7 +153,7 @@ function Products() {
         
         <div className="">
           <h1 className='text-center font-extrabold text-3xl py-10'>Our Products</h1>
-<div className={`mx-auto md:my-6 md:w-10/12 w-full md:gap-9 grid  ${display == true ? "":"overflow-hidden"}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr)) ' }}>
+<div className={`md:mx-auto md:my-6 ml-6 md:w-10/12 w-full md:gap-9 grid  ${display == true ? "":"overflow-hidden"}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr)) ' }}>
           
           { items.map((item)=>{ 
             
@@ -184,7 +184,7 @@ function Products() {
 <h3 className=' font-bold text-3xl pt-5 text-orange-500'>Price:{currentItem?.price}$</h3>
 <h3 className=' font-bold text-lg line-through pt-1 text-slate-600'>Price:{currentItem?.price+15}$</h3>
 <div className='flex pt-9'><span className='font-semibold text-red-600'>Wishlist</span><span className='pl-14  font-bold text-3xl  '><IoHeartSharp className='text-red-400 hover:text-red-600' /></span></div>
-<Button className={`w-4/6 mx-auto  h-12 my-10 ${added == true? "bg-green-600 hover:bg-green-500":"bg-blue-700 hover:bg-blue-600"}`} text={added == true? 'Added to Cart' : 'Add to Cart'} onClick={()=>addToCartArray(currentItem.id)}></Button>
+<Button className={`w-4/6 mx-auto items-center text-center h-12 my-10 ${added == true? "bg-green-600 hover:bg-green-500":"bg-blue-700 hover:bg-blue-600"}`} text={added == true? 'Added to Cart' : 'Add to Cart'} onClick={()=>addToCartArray(currentItem.id)}></Button>
 </div>
 </div>
 </div>

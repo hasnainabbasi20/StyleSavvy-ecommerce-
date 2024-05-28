@@ -8,10 +8,8 @@ import { } from 'react-icons/di';
 function Header() {
     const [clicked,setClicked] = useState(true)
     const handleMenu = ()=>{
-        if(clicked === true) {setClicked(false)}
-        if(clicked === false){
-            setClicked(true)
-        }
+    
+        setClicked(!clicked)
     }
     const navitems = [
         {
@@ -35,19 +33,19 @@ function Header() {
     return ( 
         <nav className='bg-slate-100  '>
              
-        <div className='flex md:justify-between '>
+        <div className='flex md:justify-between py-5 '>
 
-            <span className='py-4 pl-5'><NavLink to="/">STYLESAVVY</NavLink></span>
+            <span className=' pl-5 font-extralighttext text-xl'><NavLink to="/">STYLESAVVY</NavLink></span>
 
             <div className='flex   '>
                 <ul className={`md:flex  mt-11  md:m-0   bg-slate-100 md:w-auto absolute text-sm font-semibold right-0 md:right-16 ${clicked ? "mt-[-300px]":""} `}>
-                    {navitems.map((item)=>(<NavLink to={item.slug} key={item.name} ><li className=" w-screen md:w-auto px-7 text-center  py-4 hover:bg-slate-300">{item.name}</li></NavLink>))}
+                    {navitems.map((item)=>(<NavLink onClick={()=>handleMenu()} to={item.slug} key={item.name} ><li className=" w-screen md:w-auto px-7 text-center md:py-0 py-3  hover:bg-slate-300">{item.name}</li></NavLink>))}
                                                              
                    
                 </ul>
-                <ul className='flex absolute text-2xl  right-0'>
-                <NavLink to="/cart" className="px-2 py-3 " ><li><IoCartOutline /></li></NavLink>
-                <li onClick={()=>handleMenu()} className='md:hidden py-3 px-2 md:px-6'> { clicked ? <IoMenuSharp/>:<IoCloseSharp/>} </li>
+                <ul className='flex absolute text-3xl font-bold right-0'>
+                <NavLink to="/cart" className="px-2  " ><li><IoCartOutline /></li></NavLink>
+                <li onClick={()=>handleMenu()} className='md:hidden  px-2 md:px-6'> { clicked ? <IoMenuSharp/>:<IoCloseSharp/>} </li>
                 </ul>
             </div>
         </div>
